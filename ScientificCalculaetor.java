@@ -27,7 +27,23 @@ public class ScientificCalculaetor {
     }
 
     public static ArrayList<String> subtractionMaker(ArrayList<String> stringarraylist){
-        return null;
+             if(stringarraylist.contains("-")){
+            
+            int indexofoperator =stringarraylist.indexOf("-");
+           
+           
+            double firstnumber = Double.parseDouble(stringarraylist.get(indexofoperator -1));
+            double secondnumber = Double.parseDouble(stringarraylist.get(indexofoperator + 1));
+            double result = firstnumber - secondnumber;
+            stringarraylist.remove(indexofoperator-1);//removes first number left side of the operator from the list
+            stringarraylist.remove(indexofoperator-1);//removes the operator
+            stringarraylist.remove(indexofoperator-1);//removes the second number right side of the operator
+            stringarraylist.add(indexofoperator - 1,Double.toString(result));
+            
+            subtractionMaker(stringarraylist);
+                
+            }
+            return stringarraylist;
     }
     
 }
