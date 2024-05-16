@@ -25,5 +25,9 @@ public class ScientificCalculaetor {
         }
         return stringarraylist;
     }
+
+    public static ArrayList<String> subtractionMaker(ArrayList<String> stringarraylist){
+        return null;
+    }
     
 }
