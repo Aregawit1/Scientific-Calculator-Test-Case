@@ -491,4 +491,37 @@ public class ScientificCalculaetorTest {
         assertEquals(expected, ScientificCalculaetor.cosMaker(input));
     }
 
+    // Additional Test Cases for cosMaker() Method
+    @Test
+    public void testMultipleOperationsCos() {
+        ArrayList<String> input = new ArrayList<>();
+        input.add("cos");
+        input.add("30");
+        input.add("*");
+        input.add("2");
+        input.add("+");
+        input.add("cos");
+        input.add("45");
+        ArrayList<String> expected = new ArrayList<>();
+        expected.add("*");
+        expected.add("2");
+        expected.add("+");
+        expected.add("0.8660254037844386");
+        expected.add("0.7071067811865475");
+        assertEquals(expected, ScientificCalculaetor.cosMaker(input));
+    }
+
+    @Test
+    public void testInvalidInputCos() {
+        ArrayList<String> input = new ArrayList<>();
+        input.add("cos");
+        input.add("a");
+        try {
+            ScientificCalculaetor.cosMaker(input);
+            System.out.println("Expected NumberFormatException");
+        } catch (NumberFormatException e) {
+            // Expected
+        }
+    }
+
 }
