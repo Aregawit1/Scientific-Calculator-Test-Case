@@ -45,6 +45,24 @@ public class ScientificCalculaetorTest {
         expected.add("5");
         assertEquals(expected, ScientificCalculaetor.subtractionMaker(input));
     }
+     @Test
+    public void testEmptyList() {
+        ArrayList<String> input = new ArrayList<>();
+        ArrayList<String> expected = new ArrayList<>();
+        assertEquals(expected, ScientificCalculaetor.subtractionMaker(input));
+    }
+
+    @Test
+    public void testNullList() {
+        ArrayList<String> input = null;
+        // This test should throw a NullPointerException
+        try {
+            ScientificCalculaetor.subtractionMaker(input);
+            System.out.println("Expected NullPointerException");
+        } catch (NullPointerException e) {
+            // Test passed
+        }
+    }
     
 
 
