@@ -328,6 +328,7 @@ public class ScientificCalculaetorTest {
     }
     //Test Case 3 for Power Maker
 
+    
     @Test
     public void testNoPower() {
         ArrayList<String> input = new ArrayList<>();
