@@ -24,6 +24,14 @@ public class ScientificCalculaetorTest {
         assertEquals(expectedResult, result);
 
     }
+    // A test case to check adding an empty input
+    @Test
+    public void testAdditionMaker_EmptyInput() {
+        ArrayList<String> input = new ArrayList<>();
+        ArrayList<String> expectedResult = new ArrayList<>(Arrays.asList());
+        ArrayList<String> result = ScientificCalculaetor.additionMaker(input);
+        assertEquals(expectedResult, result);
+    }
     
 
 
