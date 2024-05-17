@@ -524,4 +524,77 @@ public class ScientificCalculaetorTest {
         }
     }
 
+    // All test Cases to check tanMaker() Method
+
+    @Test
+    public void testSimpleTan() {
+        ArrayList<String> input = new ArrayList<>();
+        input.add("tan");
+        input.add("45");
+        ArrayList<String> expected = new ArrayList<>();
+        expected.add("0.9999999999999999");
+        assertEquals(expected, ScientificCalculaetor.tanMaker(input));
+    }
+
+    @Test
+    public void testMultipleTans() {
+        ArrayList<String> input = new ArrayList<>();
+        input.add("tan");
+        input.add("30");
+        input.add("+");
+        input.add("tan");
+        input.add("45");
+        ArrayList<String> expected = new ArrayList<>();
+        expected.add("+");
+        expected.add("0.5773502691896257");
+        expected.add("0.9999999999999999");
+        assertEquals(expected, ScientificCalculaetor.tanMaker(input));
+    }
+
+    @Test
+    public void testNoTan() {
+        ArrayList<String> input = new ArrayList<>();
+        input.add("2");
+        input.add("+");
+        input.add("3");
+        ArrayList<String> expected = new ArrayList<>();
+        expected.add("2");
+        expected.add("+");
+        expected.add("3");
+        assertEquals(expected, ScientificCalculaetor.tanMaker(input));
+    }
+
+    @Test
+    public void testMultipleOperationstan() {
+        ArrayList<String> input = new ArrayList<>();
+        input.add("tan");
+        input.add("30");
+        input.add("*");
+        input.add("2");
+        input.add("+");
+        input.add("tan");
+        input.add("45");
+        ArrayList<String> expected = new ArrayList<>();
+        expected.add("*");
+        expected.add("2");
+        expected.add("+");
+        expected.add("0.5773502691896257");
+        expected.add("0.9999999999999999");
+        assertEquals(expected, ScientificCalculaetor.tanMaker(input));
+    }
+
+    @Test
+    public void testInvalidInputtan() {
+        ArrayList<String> input = new ArrayList<>();
+        input.add("tan");
+        input.add("a");
+        try {
+            ScientificCalculaetor.tanMaker(input);
+            System.out.println("Expected NumberFormatException");
+        } catch (NumberFormatException e) {
+            // Expected
+        }
+    }
+
+
 }
