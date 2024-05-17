@@ -32,6 +32,19 @@ public class ScientificCalculaetorTest {
         ArrayList<String> result = ScientificCalculaetor.additionMaker(input);
         assertEquals(expectedResult, result);
     }
+    //This method test if the subrationMaker() method is called and there is no subtraction sign in the input string
+    @Test
+    public void testNoSubtraction() {
+        ArrayList<String> input = new ArrayList<>();
+        input.add("10");
+        input.add("+");
+        input.add("5");
+        ArrayList<String> expected = new ArrayList<>();
+        expected.add("10");
+        expected.add("+");
+        expected.add("5");
+        assertEquals(expected, ScientificCalculaetor.subtractionMaker(input));
+    }
     
 
 
