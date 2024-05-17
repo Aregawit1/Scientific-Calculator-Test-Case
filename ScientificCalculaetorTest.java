@@ -78,6 +78,53 @@ public class ScientificCalculaetorTest {
             // Test passed
         }
     }
+
+    // Multiplication Test 1
+    @Test
+    public void testSimpleMultiplication() {
+        ArrayList<String> input = new ArrayList<>(Arrays.asList("2", "*", "3"));
+        ArrayList<String> expected = new ArrayList<>(Arrays.asList("6.0"));
+        assertEquals(expected, ScientificCalculaetor.multiplicationMaker(input));
+    }
+    
+    // Multiplication Test 2
+    @Test
+    public void testMultipleMultiplications() {
+        ArrayList<String> input = new ArrayList<>(Arrays.asList("2", "*", "3", "*", "4"));
+        ArrayList<String> expected = new ArrayList<>(Arrays.asList("24.0"));
+        assertEquals(expected, ScientificCalculaetor.multiplicationMaker(input));
+    }
+
+    // Multiplication Test 3
+    @Test
+    public void testMultiplicationWithOtherOperators() {
+        ArrayList<String> input = new ArrayList<>(Arrays.asList("2", "*", "3", "+", "4", "-", "5"));
+        ArrayList<String> expected = new ArrayList<>(Arrays.asList("6.0", "+", "4", "-", "5"));
+        assertEquals(expected, ScientificCalculaetor.multiplicationMaker(input));
+    }
+
+    // Multiplication Test 4
+    @Test
+    public void testNoMultiplication() {
+        ArrayList<String> input = new ArrayList<>(Arrays.asList("2", "+", "3", "-", "4"));
+        ArrayList<String> expected = new ArrayList<>(Arrays.asList("2", "+", "3", "-", "4"));
+        assertEquals(expected, ScientificCalculaetor.multiplicationMaker(input));
+    }
+
+    // Multiplication Test 5
+    @Test
+    public void testEmptyList() {
+        ArrayList<String> input = new ArrayList<>();
+        ArrayList<String> expected = new ArrayList<>();
+        assertEquals(expected, ScientificCalculaetor.multiplicationMaker(input));
+    }
+
+    // Multiplication Test 6
+    @Test
+    public void testNullList() {
+        ArrayList<String> input = null;
+        // This test should throw a NullPointerException
+    }
     
 
 
