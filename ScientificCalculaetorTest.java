@@ -238,6 +238,34 @@ public class ScientificCalculaetorTest {
         expected.add("2");
         assertEquals(expected, ScientificCalculaetor.radicalMaker(input));
     }
+    // additional test cases for radicalMaker method
+    //TEST 4
+    @Test
+    public void testRadicalWithPreviousNumber() {
+        ArrayList<String> input = new ArrayList<>();
+        input.add("2");
+        input.add("√");
+        input.add("4");
+        ArrayList<String> expected = new ArrayList<>();
+        expected.add("2");
+        expected.add("*");
+        expected.add("2.0");
+        assertEquals(expected, ScientificCalculaetor.radicalMaker(input));
+    }
+    // TEST 5
+    @Test
+    public void testRadicalWithPreviousOperator() {
+        ArrayList<String> input = new ArrayList<>();
+        input.add("2");
+        input.add("+");
+        input.add("√");
+        input.add("4");
+        ArrayList<String> expected = new ArrayList<>();
+        expected.add("2");
+        expected.add("+");
+        expected.add("2.0");
+        assertEquals(expected, ScientificCalculaetor.radicalMaker(input));
+    }
     
 
 
