@@ -341,6 +341,39 @@ public class ScientificCalculaetorTest {
         expected.add("3");
         assertEquals(expected, ScientificCalculaetor.powerMaker(input));
     }
-    
+
+    //tast case 4
+     @Test
+    public void testMultipleOperations() {
+        ArrayList<String> input = new ArrayList<>();
+        input.add("2");
+        input.add("^");
+        input.add("3");
+        input.add("*");
+        input.add("3");
+        input.add("+");
+        input.add("2");
+        ArrayList<String> expected = new ArrayList<>();
+        expected.add("8.0");
+        expected.add("*");
+        expected.add("3");
+        expected.add("+");
+        expected.add("2");
+        assertEquals(expected, ScientificCalculaetor.powerMaker(input));
+    }
+    //test case 5
+    @Test
+    public void testInvalidInput() {
+        ArrayList<String> input = new ArrayList<>();
+        input.add("2");
+        input.add("^");
+        input.add("a");
+        try {
+            ScientificCalculaetor.powerMaker(input);
+            System.out.println("Expected NumberFormatException");
+        } catch (NumberFormatException e) {
+            // Expected
+        }
+    }
 
 }
