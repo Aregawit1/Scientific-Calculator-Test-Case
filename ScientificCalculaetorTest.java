@@ -388,4 +388,21 @@ public class ScientificCalculaetorTest {
         assertEquals(expected, ScientificCalculaetor.sinMaker(input));
     }
 
+    // test Case 2
+    @Test
+    public void testMultipleSins() {
+        ArrayList<String> input = new ArrayList<>();
+        input.add("sin");
+        input.add("30");
+        input.add("+");
+        input.add("sin");
+        input.add("45");
+        ArrayList<String> expected = new ArrayList<>();
+        expected.add("+");
+        expected.add("0.5");
+        expected.add("0.7071067811865476");
+        assertEquals(expected, ScientificCalculaetor.sinMaker(input));
+    }
+
+
 }
