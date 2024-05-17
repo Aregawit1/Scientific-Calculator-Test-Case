@@ -63,6 +63,21 @@ public class ScientificCalculaetorTest {
             // Test passed
         }
     }
+    // test subtraction of inputs with diffrent data types
+    @Test
+    public void testInvalidInput() {
+        ArrayList<String> input = new ArrayList<>();
+        input.add("10");
+        input.add("-");
+        input.add("abc");
+        // This test should throw a NumberFormatException
+        try {
+            ScientificCalculaetor.subtractionMaker(input);
+            System.out.println("Expected NumberFormatException");
+        } catch (NumberFormatException e) {
+            // Test passed
+        }
+    }
     
 
 
