@@ -308,6 +308,24 @@ public class ScientificCalculaetorTest {
         expected.add("8.0");
         assertEquals(expected, ScientificCalculaetor.powerMaker(input));
     }
+
+    //Test Case 1 For Power maker
+    @Test
+    public void testMultiplePowers() {
+        ArrayList<String> input = new ArrayList<>();
+        input.add("2");
+        input.add("^");
+        input.add("3");
+        input.add("*");
+        input.add("3");
+        input.add("^");
+        input.add("2");
+        ArrayList<String> expected = new ArrayList<>();
+        expected.add("8.0");
+        expected.add("*");
+        expected.add("9.0");
+        assertEquals(expected, ScientificCalculaetor.powerMaker(input));
+    }
     
 
 }
