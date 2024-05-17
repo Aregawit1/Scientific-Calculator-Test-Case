@@ -164,6 +164,46 @@ public class ScientificCalculaetor {
         }
     return stringarraylist;
 }
+    public static ArrayList<String> cosMaker(ArrayList<String> stringarraylist){
+    if(stringarraylist.contains("cos")){
+        int indexofcos = stringarraylist.indexOf("cos");
+        double result = Math.nextDown(Math.cos(Math.toRadians(Double.parseDouble(stringarraylist.get(indexofcos+1)))));
+        stringarraylist.remove(indexofcos);
+        stringarraylist.remove(indexofcos);
+        stringarraylist.add(Double.toString(result));
+         if(indexofcos != 0){
+       char tempchar [] = stringarraylist.get(indexofcos - 1).toCharArray();
+       if(Character.isDigit(tempchar[0])){
+       stringarraylist.add(indexofcos,"×");
+    }
+    }
+    
+    cosMaker(stringarraylist);
+    }
+return stringarraylist;
+}
+
+    // Declaring and implementing tanMaker() Method
+
+public static ArrayList<String> tanMaker(ArrayList<String> stringarraylist){
+    if(stringarraylist.contains("tan")){
+        int indexoftan = stringarraylist.indexOf("tan");
+        double result = Math.tan(Math.toRadians(Double.parseDouble(stringarraylist.get(indexoftan+1))));
+        stringarraylist.remove(indexoftan);
+        stringarraylist.remove(indexoftan);
+        stringarraylist.add(Double.toString(result));
+         if(indexoftan != 0){
+       char tempchar [] = stringarraylist.get(indexoftan - 1).toCharArray();
+       if(Character.isDigit(tempchar[0])){
+       stringarraylist.add(indexoftan,"*");
+    }
+    }
+    
+    tanMaker(stringarraylist);
+    }
+return stringarraylist;
+}
+    
     
     
 }

@@ -388,4 +388,213 @@ public class ScientificCalculaetorTest {
         assertEquals(expected, ScientificCalculaetor.sinMaker(input));
     }
 
+    // test Case 2
+    @Test
+    public void testMultipleSins() {
+        ArrayList<String> input = new ArrayList<>();
+        input.add("sin");
+        input.add("30");
+        input.add("+");
+        input.add("sin");
+        input.add("45");
+        ArrayList<String> expected = new ArrayList<>();
+        expected.add("+");
+        expected.add("0.5");
+        expected.add("0.7071067811865476");
+        assertEquals(expected, ScientificCalculaetor.sinMaker(input));
+    }
+
+    // Adding different test case for sin() method
+
+    @Test
+    public void testNoSin() {
+        ArrayList<String> input = new ArrayList<>();
+        input.add("2");
+        input.add("+");
+        input.add("3");
+        ArrayList<String> expected = new ArrayList<>();
+        expected.add("2");
+        expected.add("+");
+        expected.add("3");
+        assertEquals(expected, ScientificCalculaetor.sinMaker(input));
+    }
+
+    @Test
+    public void testMultipleOperations() {
+        ArrayList<String> input = new ArrayList<>();
+        input.add("sin");
+        input.add("30");
+        input.add("*");
+        input.add("2");
+        input.add("+");
+        input.add("sin");
+        input.add("45");
+        ArrayList<String> expected = new ArrayList<>();
+        expected.add("*");
+        expected.add("2");
+        expected.add("+");
+        expected.add("0.5");
+        expected.add("0.7071067811865476");
+        assertEquals(expected, ScientificCalculaetor.sinMaker(input));
+    }
+
+    @Test
+    public void testInvalidInput() {
+        ArrayList<String> input = new ArrayList<>();
+        input.add("sin");
+        input.add("a");
+        try {
+            ScientificCalculaetor.sinMaker(input);
+            System.out.println("Expected NumberFormatException");
+        } catch (NumberFormatException e) {
+            // Expected
+        }
+    }
+
+    // TEST CASE FRO THE METHOD cosMaker()
+
+    @Test
+    public void testSimpleCos() {
+        ArrayList<String> input = new ArrayList<>();
+        input.add("cos");
+        input.add("60");
+        ArrayList<String> expected = new ArrayList<>();
+        expected.add("0.5");
+        assertEquals(expected, ScientificCalculaetor.cosMaker(input));
+    }
+
+    @Test
+    public void testMultipleCoses() {
+        ArrayList<String> input = new ArrayList<>();
+        input.add("cos");
+        input.add("30");
+        input.add("+");
+        input.add("cos");
+        input.add("45");
+        ArrayList<String> expected = new ArrayList<>();
+        expected.add("+");
+        expected.add("0.8660254037844386");
+        expected.add("0.7071067811865475");
+        assertEquals(expected, ScientificCalculaetor.cosMaker(input));
+    }
+
+    @Test
+    public void testNoCos() {
+        ArrayList<String> input = new ArrayList<>();
+        input.add("2");
+        input.add("+");
+        input.add("3");
+        ArrayList<String> expected = new ArrayList<>();
+        expected.add("2");
+        expected.add("+");
+        expected.add("3");
+        assertEquals(expected, ScientificCalculaetor.cosMaker(input));
+    }
+
+    // Additional Test Cases for cosMaker() Method
+    @Test
+    public void testMultipleOperationsCos() {
+        ArrayList<String> input = new ArrayList<>();
+        input.add("cos");
+        input.add("30");
+        input.add("*");
+        input.add("2");
+        input.add("+");
+        input.add("cos");
+        input.add("45");
+        ArrayList<String> expected = new ArrayList<>();
+        expected.add("*");
+        expected.add("2");
+        expected.add("+");
+        expected.add("0.8660254037844386");
+        expected.add("0.7071067811865475");
+        assertEquals(expected, ScientificCalculaetor.cosMaker(input));
+    }
+
+    @Test
+    public void testInvalidInputCos() {
+        ArrayList<String> input = new ArrayList<>();
+        input.add("cos");
+        input.add("a");
+        try {
+            ScientificCalculaetor.cosMaker(input);
+            System.out.println("Expected NumberFormatException");
+        } catch (NumberFormatException e) {
+            // Expected
+        }
+    }
+
+    // All test Cases to check tanMaker() Method
+
+    @Test
+    public void testSimpleTan() {
+        ArrayList<String> input = new ArrayList<>();
+        input.add("tan");
+        input.add("45");
+        ArrayList<String> expected = new ArrayList<>();
+        expected.add("0.9999999999999999");
+        assertEquals(expected, ScientificCalculaetor.tanMaker(input));
+    }
+
+    @Test
+    public void testMultipleTans() {
+        ArrayList<String> input = new ArrayList<>();
+        input.add("tan");
+        input.add("30");
+        input.add("+");
+        input.add("tan");
+        input.add("45");
+        ArrayList<String> expected = new ArrayList<>();
+        expected.add("+");
+        expected.add("0.5773502691896257");
+        expected.add("0.9999999999999999");
+        assertEquals(expected, ScientificCalculaetor.tanMaker(input));
+    }
+
+    @Test
+    public void testNoTan() {
+        ArrayList<String> input = new ArrayList<>();
+        input.add("2");
+        input.add("+");
+        input.add("3");
+        ArrayList<String> expected = new ArrayList<>();
+        expected.add("2");
+        expected.add("+");
+        expected.add("3");
+        assertEquals(expected, ScientificCalculaetor.tanMaker(input));
+    }
+
+    @Test
+    public void testMultipleOperationstan() {
+        ArrayList<String> input = new ArrayList<>();
+        input.add("tan");
+        input.add("30");
+        input.add("*");
+        input.add("2");
+        input.add("+");
+        input.add("tan");
+        input.add("45");
+        ArrayList<String> expected = new ArrayList<>();
+        expected.add("*");
+        expected.add("2");
+        expected.add("+");
+        expected.add("0.5773502691896257");
+        expected.add("0.9999999999999999");
+        assertEquals(expected, ScientificCalculaetor.tanMaker(input));
+    }
+
+    @Test
+    public void testInvalidInputtan() {
+        ArrayList<String> input = new ArrayList<>();
+        input.add("tan");
+        input.add("a");
+        try {
+            ScientificCalculaetor.tanMaker(input);
+            System.out.println("Expected NumberFormatException");
+        } catch (NumberFormatException e) {
+            // Expected
+        }
+    }
+
+
 }
