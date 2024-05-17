@@ -266,7 +266,32 @@ public class ScientificCalculaetorTest {
         expected.add("2.0");
         assertEquals(expected, ScientificCalculaetor.radicalMaker(input));
     }
+    // Let me add two more test cases for radicalMaker()
     
+        //TEST 6 
+    @Test
+    public void testNegativeNumberRadical() {
+        ArrayList<String> input = new ArrayList<>();
+        input.add("√");
+        input.add("-4");
+        ArrayList<String> expected = new ArrayList<>();
+        expected.add("NaN");
+        assertEquals(expected, ScientificCalculaetor.radicalMaker(input));
+    }
+    //TEST 7
+    @Test
+    public void testIncompleteSyntax() {
+        try{
+            ArrayList<String> input = new ArrayList<>();
+        input.add("√");
+        ArrayList<String> expected = new ArrayList<>();
+        expected.add("Syntax Error");
+        assertEquals(expected, ScientificCalculaetor.radicalMaker(input));
+        }
+        catch(NumberFormatException ex){
 
+        }
+        
+    }
 
 }
