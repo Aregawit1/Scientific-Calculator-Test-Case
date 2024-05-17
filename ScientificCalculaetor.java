@@ -82,5 +82,52 @@ public class ScientificCalculaetor {
         }
         return stringarraylist;
     }
+      public static ArrayList<String> radicalMaker (ArrayList<String> stringarraylist){
+        try{
+
+
+            if(stringarraylist.contains("√")){
+                int indexofradical = stringarraylist.indexOf("√");
+                double number = Double.parseDouble(stringarraylist.get(indexofradical+1));
+                double result = Math.sqrt(number);
+                
+                stringarraylist.remove(indexofradical);
+                stringarraylist.remove(indexofradical);
+                stringarraylist.add(indexofradical,Double.toString(result));
+                if(indexofradical != 0){
+                   char tempchar [] = stringarraylist.get(indexofradical-1).toCharArray();
+                   if(Character.isDigit(tempchar[0])){
+                   stringarraylist.add(indexofradical,"*");
+                }
+                }
+                radicalMaker(stringarraylist);
+            }
+            
+            return stringarraylist;
+        }catch(Exception  ex){
+
+            stringarraylist.add("Syntax Error");
+
+        }
+        if(stringarraylist.contains("√")){
+            int indexofradical = stringarraylist.indexOf("√");
+            double number = Double.parseDouble(stringarraylist.get(indexofradical+1));
+            double result = Math.sqrt(number);
+            
+            stringarraylist.remove(indexofradical);
+            stringarraylist.remove(indexofradical);
+            stringarraylist.add(indexofradical,Double.toString(result));
+            if(indexofradical != 0){
+               char tempchar [] = stringarraylist.get(indexofradical-1).toCharArray();
+               if(Character.isDigit(tempchar[0])){
+               stringarraylist.add(indexofradical,"*");
+            }
+            }
+            radicalMaker(stringarraylist);
+        }
+        
+        return stringarraylist;
+    }
+    
     
 }
