@@ -196,6 +196,48 @@ public class ScientificCalculaetorTest {
        
         assertEquals(expected, ScientificCalculaetor.divisionMaker(input));
     }
+
+
+    // Test cases for Squere root maker
+    //
+
+    //TEST 1
+    @Test
+    public void testSimpleRadical() {
+        ArrayList<String> input = new ArrayList<>();
+        input.add("√");
+        input.add("4");
+        ArrayList<String> expected = new ArrayList<>();
+        expected.add("2.0");
+        assertEquals(expected, ScientificCalculaetor.radicalMaker(input));
+    }
+    //TEST 2
+    @Test
+    public void testMultipleRadicals() {
+        ArrayList<String> input = new ArrayList<>();
+        input.add("√");
+        input.add("4");
+        input.add("√");
+        input.add("9");
+        ArrayList<String> expected = new ArrayList<>();
+        expected.add("2.0");
+        expected.add("*");
+        expected.add("3.0");
+        assertEquals(expected, ScientificCalculaetor.radicalMaker(input));
+    }
+    //TEST 3
+    @Test
+    public void testNoRadical() {
+        ArrayList<String> input = new ArrayList<>();
+        input.add("10");
+        input.add("+");
+        input.add("2");
+        ArrayList<String> expected = new ArrayList<>();
+        expected.add("10");
+        expected.add("+");
+        expected.add("2");
+        assertEquals(expected, ScientificCalculaetor.radicalMaker(input));
+    }
     
 
 
