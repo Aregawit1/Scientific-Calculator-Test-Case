@@ -404,5 +404,52 @@ public class ScientificCalculaetorTest {
         assertEquals(expected, ScientificCalculaetor.sinMaker(input));
     }
 
+    // Adding different test case for sin() method
+
+    @Test
+    public void testNoSin() {
+        ArrayList<String> input = new ArrayList<>();
+        input.add("2");
+        input.add("+");
+        input.add("3");
+        ArrayList<String> expected = new ArrayList<>();
+        expected.add("2");
+        expected.add("+");
+        expected.add("3");
+        assertEquals(expected, ScientificCalculaetor.sinMaker(input));
+    }
+
+    @Test
+    public void testMultipleOperations() {
+        ArrayList<String> input = new ArrayList<>();
+        input.add("sin");
+        input.add("30");
+        input.add("*");
+        input.add("2");
+        input.add("+");
+        input.add("sin");
+        input.add("45");
+        ArrayList<String> expected = new ArrayList<>();
+        expected.add("*");
+        expected.add("2");
+        expected.add("+");
+        expected.add("0.5");
+        expected.add("0.7071067811865476");
+        assertEquals(expected, ScientificCalculaetor.sinMaker(input));
+    }
+
+    @Test
+    public void testInvalidInput() {
+        ArrayList<String> input = new ArrayList<>();
+        input.add("sin");
+        input.add("a");
+        try {
+            ScientificCalculaetor.sinMaker(input);
+            System.out.println("Expected NumberFormatException");
+        } catch (NumberFormatException e) {
+            // Expected
+        }
+    }
+
 
 }
