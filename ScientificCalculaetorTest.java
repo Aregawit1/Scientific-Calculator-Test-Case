@@ -451,5 +451,44 @@ public class ScientificCalculaetorTest {
         }
     }
 
+    // TEST CASE FRO THE METHOD cosMaker()
+
+    @Test
+    public void testSimpleCos() {
+        ArrayList<String> input = new ArrayList<>();
+        input.add("cos");
+        input.add("60");
+        ArrayList<String> expected = new ArrayList<>();
+        expected.add("0.5");
+        assertEquals(expected, ScientificCalculaetor.cosMaker(input));
+    }
+
+    @Test
+    public void testMultipleCoses() {
+        ArrayList<String> input = new ArrayList<>();
+        input.add("cos");
+        input.add("30");
+        input.add("+");
+        input.add("cos");
+        input.add("45");
+        ArrayList<String> expected = new ArrayList<>();
+        expected.add("+");
+        expected.add("0.8660254037844386");
+        expected.add("0.7071067811865475");
+        assertEquals(expected, ScientificCalculaetor.cosMaker(input));
+    }
+
+    @Test
+    public void testNoCos() {
+        ArrayList<String> input = new ArrayList<>();
+        input.add("2");
+        input.add("+");
+        input.add("3");
+        ArrayList<String> expected = new ArrayList<>();
+        expected.add("2");
+        expected.add("+");
+        expected.add("3");
+        assertEquals(expected, ScientificCalculaetor.cosMaker(input));
+    }
 
 }
