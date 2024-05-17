@@ -420,7 +420,7 @@ public class ScientificCalculaetorTest {
     }
 
     @Test
-    public void testMultipleOperations() {
+    public void testMultipleOperationssin() {
         ArrayList<String> input = new ArrayList<>();
         input.add("sin");
         input.add("30");
@@ -439,7 +439,7 @@ public class ScientificCalculaetorTest {
     }
 
     @Test
-    public void testInvalidInput() {
+    public void testInvalidInputsin() {
         ArrayList<String> input = new ArrayList<>();
         input.add("sin");
         input.add("a");
