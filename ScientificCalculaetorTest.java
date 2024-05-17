@@ -125,6 +125,77 @@ public class ScientificCalculaetorTest {
         ArrayList<String> input = null;
         // This test should throw a NullPointerException
     }
+
+  //DIVISION TEST CASES
+
+    //Firts test case
+    @Test
+    public void testSimpleDivision() {
+        ArrayList<String> input = new ArrayList<>();
+        input.add("10");
+        input.add("÷");
+        input.add("2");
+        ArrayList<String> expected = new ArrayList<>();
+        expected.add("5.0");
+        assertEquals(expected, ScientificCalculaetor.divisionMaker(input));
+    }
+
+    //Second text case
+    @Test
+    public void testMultipleDivisions() {
+        ArrayList<String> input = new ArrayList<>();
+        input.add("10");
+        input.add("÷");
+        input.add("2");
+        input.add("÷");
+        input.add("2");
+        ArrayList<String> expected = new ArrayList<>();
+        expected.add("2.5");
+        assertEquals(expected, ScientificCalculaetor.divisionMaker(input));
+    }
+
+    //third test case
+    @Test
+    public void testNoDivision() {
+        ArrayList<String> input = new ArrayList<>();
+        input.add("10");
+        input.add("+");
+        input.add("2");
+        ArrayList<String> expected = new ArrayList<>();
+        expected.add("10");
+        expected.add("+");
+        expected.add("2");
+        assertEquals(expected, ScientificCalculaetor.divisionMaker(input));
+    }
+
+
+    //fourth test case
+    @Test
+    public void testMultipleOperations() {
+        ArrayList<String> input = new ArrayList<>();
+        input.add("10");
+        input.add("÷");
+        input.add("2");
+        input.add("+");
+        input.add("3");
+        ArrayList<String> expected = new ArrayList<>();
+        expected.add("5.0");
+        expected.add("+");
+        expected.add("3");
+        assertEquals(expected, ScientificCalculaetor.divisionMaker(input));
+    }
+    //fith test case
+    @Test
+    public void testDivisionByZero() {
+        ArrayList<String> input = new ArrayList<>();
+        input.add("10");
+        input.add("÷");
+        input.add("0");
+        ArrayList<String> expected = new ArrayList<>();
+        expected.add("Infinity");
+       
+        assertEquals(expected, ScientificCalculaetor.divisionMaker(input));
+    }
     
 
 
