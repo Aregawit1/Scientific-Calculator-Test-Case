@@ -113,7 +113,7 @@ public class ScientificCalculaetorTest {
 
     // Multiplication Test 5
     @Test
-    public void testEmptyList() {
+    public void testEmptyListMaltiplicationMaker() {
         ArrayList<String> input = new ArrayList<>();
         ArrayList<String> expected = new ArrayList<>();
         assertEquals(expected, ScientificCalculaetor.multiplicationMaker(input));
@@ -121,7 +121,7 @@ public class ScientificCalculaetorTest {
 
     // Multiplication Test 6
     @Test
-    public void testNullList() {
+    public void testNullListMultiplication() {
         ArrayList<String> input = null;
         // This test should throw a NullPointerException
     }
@@ -344,7 +344,7 @@ public class ScientificCalculaetorTest {
 
     //tast case 4
      @Test
-    public void testMultipleOperations() {
+    public void testMultipleOperationspowerMaker() {
         ArrayList<String> input = new ArrayList<>();
         input.add("2");
         input.add("^");
@@ -363,7 +363,7 @@ public class ScientificCalculaetorTest {
     }
     //test case 5
     @Test
-    public void testInvalidInput() {
+    public void testInvalidInputpowrMaker() {
         ArrayList<String> input = new ArrayList<>();
         input.add("2");
         input.add("^");
@@ -374,6 +374,18 @@ public class ScientificCalculaetorTest {
         } catch (NumberFormatException e) {
             // Expected
         }
+    }
+    //Test Cases For Sin() function
+
+    // Test case 1
+    @Test
+    public void testSimpleSin() {
+        ArrayList<String> input = new ArrayList<>();
+        input.add("sin");
+        input.add("30");
+        ArrayList<String> expected = new ArrayList<>();
+        expected.add("0.5");
+        assertEquals(expected, ScientificCalculaetor.sinMaker(input));
     }
 
 }

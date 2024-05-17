@@ -145,6 +145,25 @@ public class ScientificCalculaetor {
         
         return stringarraylist;  
     }
+
+    public static ArrayList<String> sinMaker(ArrayList<String> stringarraylist){
+        if(stringarraylist.contains("sin")){
+            int indexofsin = stringarraylist.indexOf("sin");
+            double result = Math.nextUp(Math.sin(Math.toRadians(Double.parseDouble(stringarraylist.get(indexofsin+1)))));
+            stringarraylist.remove(indexofsin);
+            stringarraylist.remove(indexofsin);
+            stringarraylist.add(Double.toString(result));
+             if(indexofsin != 0){
+           char tempchar [] = stringarraylist.get(indexofsin - 1).toCharArray();
+           if(Character.isDigit(tempchar[0])){
+           stringarraylist.add(indexofsin,"*");
+        }
+        }
+        
+        sinMaker(stringarraylist);
+        }
+    return stringarraylist;
+}
     
     
 }
