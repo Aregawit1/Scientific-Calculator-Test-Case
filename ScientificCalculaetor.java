@@ -128,6 +128,23 @@ public class ScientificCalculaetor {
         
         return stringarraylist;
     }
+
+
+    public static ArrayList<String> powerMaker(ArrayList<String> stringarraylist){
+            
+        if(stringarraylist.contains("^")){
+            int indexofpow = stringarraylist.indexOf("^");
+            double result = Math.pow(Double.parseDouble(stringarraylist.get(indexofpow-1)), Double.parseDouble(stringarraylist.get(indexofpow+1)));
+            stringarraylist.remove(indexofpow-1);
+            stringarraylist.remove(indexofpow-1);
+            stringarraylist.remove(indexofpow-1);
+            stringarraylist.add(indexofpow-1,Double.toString(result));
+            
+            powerMaker(stringarraylist);
+        }
+        
+        return stringarraylist;  
+    }
     
     
 }
