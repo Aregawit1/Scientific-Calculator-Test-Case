@@ -203,7 +203,10 @@ public static ArrayList<String> tanMaker(ArrayList<String> stringarraylist){
     }
 return stringarraylist;
 }
-    
+    //Function definition for the method arcsinMaker() method
+
+     public static ArrayList<String> arcsinMaker(ArrayList<String> stringarraylist){
+     }
     
     
 }
