@@ -669,4 +669,21 @@ public class ScientificCalculaetorTest {
         assertEquals(expectedResult, result);
 
     }
+    //Test case 2 for arccosMaker()
+    // A test case to check arccos operation with a number before "arccos"
+    @Test
+    public void arccosTestWithNumberBefore(){
+        
+        ArrayList<String> testInput = new ArrayList<>(Arrays.asList("2", "arccos", "0.75"));
+
+        // Expected result after arccos operation
+        ArrayList<String> expectedResult = new ArrayList<>(Arrays.asList("2", "×", "41.409622109270856"));
+
+        // Call the arccosMaker method from here
+        ArrayList<String> result = ScientificCalculaetor.arccosMaker(testInput);
+
+        // Check if the result matches the expected result
+        assertEquals(expectedResult, result);
+
+    }
 }
