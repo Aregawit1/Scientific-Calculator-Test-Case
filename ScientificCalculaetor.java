@@ -264,4 +264,23 @@ return stringarraylist;
             }
         return stringarraylist;
     }
+    //Implementaion of logMaker()
+    public static ArrayList<String> logMaker(ArrayList<String> stringarraylist){
+        if(stringarraylist.contains("log")){
+            int indexoflog = stringarraylist.indexOf("log");
+            double result = Math.log10(Double.parseDouble(stringarraylist.get(indexoflog + 1 )));
+            stringarraylist.remove(indexoflog);
+            stringarraylist.remove(indexoflog);
+            stringarraylist.add(Double.toString(result));
+            
+            if(indexoflog != 0){
+               char tempchar [] = stringarraylist.get(indexoflog - 1).toCharArray();
+               if(Character.isDigit(tempchar[0])){
+               stringarraylist.add(indexoflog,"×");
+            }
+            }
+            logMaker(stringarraylist);
+        }
+        return stringarraylist;
+    } 
 }
