@@ -206,6 +206,23 @@ return stringarraylist;
     //Function definition for the method arcsinMaker() method
 
      public static ArrayList<String> arcsinMaker(ArrayList<String> stringarraylist){
+
+          if(stringarraylist.contains("arcsin")){
+                int indexofarcsin = stringarraylist.indexOf("arcsin");
+                double result = Math.nextDown(Math.toDegrees(Math.asin((Double.parseDouble(stringarraylist.get(indexofarcsin+1))))));
+                stringarraylist.remove(indexofarcsin);
+                stringarraylist.remove(indexofarcsin);
+                stringarraylist.add(Double.toString(result));
+                 if(indexofarcsin != 0){
+               char tempchar [] = stringarraylist.get(indexofarcsin - 1).toCharArray();
+               if(Character.isDigit(tempchar[0])){
+               stringarraylist.add(indexofarcsin,"×");
+            }
+            }
+            
+            arcsinMaker(stringarraylist);
+            }
+        return stringarraylist;
      }
     
     
