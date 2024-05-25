@@ -719,4 +719,23 @@ public class ScientificCalculaetorTest {
         assertEquals(expectedResult, result);
 
     }
+    //Test case 2 for arctanMaker()
+    
+    // A test case to check arctan operation with a number before "arctan"
+    @Test
+    public void arctanTestWithNumberBefore(){
+        
+        ArrayList<String> testInput = new ArrayList<>(Arrays.asList("2", "arctan", "1"));
+
+        // Expected result after arctan operation
+        ArrayList<String> expectedResult = new ArrayList<>(Arrays.asList("2", "×", "-4.9E-324"));
+
+        // Call the arctanMaker method from here
+        ArrayList<String> result = ScientificCalculaetor.arctanMaker(testInput);
+
+        // Check if the result matches the expected result
+        assertEquals(expectedResult, result);
+
+    }
+
 }
