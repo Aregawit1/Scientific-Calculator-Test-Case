@@ -596,5 +596,24 @@ public class ScientificCalculaetorTest {
         }
     }
 
+    //Adding new test case for arcsinMaker method
+
+    //test case 1 for arcsinMaker
+    @Test
+    public void arcsinTest(){
+        
+        ArrayList<String> testInput = new ArrayList<>(Arrays.asList("arcsin", "0.5"));
+
+        // Expected result after arcsin operation
+        ArrayList<String> expectedResult = new ArrayList<>(Arrays.asList("30.0"));
+
+        // Call the arcsinMaker method from here
+        ArrayList<String> result = ScientificCalculaetor.arcsinMaker(testInput);
+
+        // Check if the result matches the expected result
+        assertEquals(expectedResult, result);
+
+    }
+
 
 }
