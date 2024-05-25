@@ -614,6 +614,24 @@ public class ScientificCalculaetorTest {
         assertEquals(expectedResult, result);
 
     }
+    //Test case 2 for arcsinMaker
+
+     // A test case to check arcsin operation with a number before "arcsin"
+    @Test
+    public void arcsinTestWithNumberBefore(){
+        
+        ArrayList<String> testInput = new ArrayList<>(Arrays.asList("2", "arcsin", "0.75"));
+
+        // Expected result after arcsin operation
+        ArrayList<String> expectedResult = new ArrayList<>(Arrays.asList("2", "×", "48.59037789072914"));
+
+        // Call the arcsinMaker method from here
+        ArrayList<String> result = ScientificCalculaetor.arcsinMaker(testInput);
+
+        // Check if the result matches the expected result
+        assertEquals(expectedResult, result);
+
+    }
 
 
 }
