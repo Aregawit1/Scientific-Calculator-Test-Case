@@ -224,6 +224,25 @@ return stringarraylist;
             }
         return stringarraylist;
      }
+
+    //Function definition and implementation of arccosMaker()
     
+    public static ArrayList<String> arccosMaker(ArrayList<String> stringarraylist){
+    if(stringarraylist.contains("arccos")){
+        int indexofarccos = stringarraylist.indexOf("arccos");
+        double result = Math.nextDown(Math.toDegrees(Math.acos((Double.parseDouble(stringarraylist.get(indexofarccos+1))))));
+        stringarraylist.remove(indexofarccos);
+        stringarraylist.remove(indexofarccos);
+        stringarraylist.add(Double.toString(result));
+         if(indexofarccos != 0){
+       char tempchar [] = stringarraylist.get(indexofarccos - 1).toCharArray();
+       if(Character.isDigit(tempchar[0])){
+       stringarraylist.add(indexofarccos,"×");
+    }
+    }
     
+    arccosMaker(stringarraylist);
+    }
+return stringarraylist;
+}
 }
