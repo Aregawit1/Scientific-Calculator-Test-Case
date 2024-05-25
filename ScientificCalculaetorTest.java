@@ -652,7 +652,21 @@ public class ScientificCalculaetorTest {
         assertEquals(expectedResult, result);
 
     }
+    //Test case 1 for arccosMaker()
 
+@Test
+    public void arccosTest(){
+        
+        ArrayList<String> testInput = new ArrayList<>(Arrays.asList("arccos", "0.5"));
 
+        // Expected result after arccos operation
+        ArrayList<String> expectedResult = new ArrayList<>(Arrays.asList("60.0"));
 
+        // Call the arccosMaker method from here
+        ArrayList<String> result = ScientificCalculaetor.arccosMaker(testInput);
+
+        // Check if the result matches the expected result
+        assertEquals(expectedResult, result);
+
+    }
 }
