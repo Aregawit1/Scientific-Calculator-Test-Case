@@ -633,5 +633,26 @@ public class ScientificCalculaetorTest {
 
     }
 
+    //Test case 3 for arcsinMaker
+
+    
+    // A test case to check arcsin operation with an empty input
+    @Test
+    public void arcsinTestWithEmptyInput(){
+        
+        ArrayList<String> testInput = new ArrayList<>();
+
+        // Expected result after arcsin operation
+        ArrayList<String> expectedResult = new ArrayList<>();
+
+        // Call the arcsinMaker method from here
+        ArrayList<String> result = ScientificCalculaetor.arcsinMaker(testInput);
+
+        // Check if the result matches the expected result
+        assertEquals(expectedResult, result);
+
+    }
+
+
 
 }
