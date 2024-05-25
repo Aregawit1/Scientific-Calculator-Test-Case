@@ -755,4 +755,54 @@ public class ScientificCalculaetorTest {
         assertEquals(expectedResult, result);
 
     }
+    //Test cases for logMaker()
+        @Test
+    public void logTest(){
+        
+        ArrayList<String> testInput = new ArrayList<>(Arrays.asList("log", "100"));
+
+        // Expected result after log operation
+        ArrayList<String> expectedResult = new ArrayList<>(Arrays.asList("2.0"));
+
+        // Call the logMaker method from here
+        ArrayList<String> result = ScientificCalculaetor.logMaker(testInput);
+
+        // Check if the result matches the expected result
+        assertEquals(expectedResult, result);
+
+    }
+    
+    // A test case to check log operation with a number before "log"
+    @Test
+    public void logTestWithNumberBefore(){
+        
+        ArrayList<String> testInput = new ArrayList<>(Arrays.asList("2", "log", "100"));
+
+        // Expected result after log operation
+        ArrayList<String> expectedResult = new ArrayList<>(Arrays.asList("2", "×", "2.0"));
+
+        // Call the logMaker method from here
+        ArrayList<String> result = ScientificCalculaetor.logMaker(testInput);
+
+        // Check if the result matches the expected result
+        assertEquals(expectedResult, result);
+
+    }
+    
+    // A test case to check log operation with an empty input
+    @Test
+    public void logTestWithEmptyInput(){
+        
+        ArrayList<String> testInput = new ArrayList<>();
+
+        // Expected result after log operation
+        ArrayList<String> expectedResult = new ArrayList<>();
+
+        // Call the logMaker method from here
+        ArrayList<String> result = ScientificCalculaetor.logMaker(testInput);
+
+        // Check if the result matches the expected result
+        assertEquals(expectedResult, result);
+
+    }
 }
