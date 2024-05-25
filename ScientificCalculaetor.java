@@ -245,4 +245,23 @@ return stringarraylist;
     }
 return stringarraylist;
 }
+    //Function definition and implementation of arctanMaker()
+    public static ArrayList<String> arctanMaker(ArrayList<String> stringarraylist){
+            if(stringarraylist.contains("arctan")){
+                int indexofarctan = stringarraylist.indexOf("arctan");
+                double result = Math.nextDown(Math.toDegrees(Math.acos((Double.parseDouble(stringarraylist.get(indexofarctan+1))))));
+                stringarraylist.remove(indexofarctan);
+                stringarraylist.remove(indexofarctan);
+                stringarraylist.add(Double.toString(result));
+                 if(indexofarctan != 0){
+               char tempchar [] = stringarraylist.get(indexofarctan - 1).toCharArray();
+               if(Character.isDigit(tempchar[0])){
+               stringarraylist.add(indexofarctan,"×");
+            }
+            }
+            
+            arctanMaker(stringarraylist);
+            }
+        return stringarraylist;
+    }
 }
