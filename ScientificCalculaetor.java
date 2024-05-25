@@ -283,4 +283,12 @@ return stringarraylist;
         }
         return stringarraylist;
     } 
+    //Implementation of lnMaker()
+    public static ArrayList<String> lnMaker(ArrayList<String> stringarraylist){
+           if(stringarraylist.contains("ln")){
+               int indexofln = stringarraylist.indexOf("ln");
+               double result ;
+           }
+        return stringarraylist;
+    }
 }
