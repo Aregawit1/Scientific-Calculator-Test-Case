@@ -737,5 +737,22 @@ public class ScientificCalculaetorTest {
         assertEquals(expectedResult, result);
 
     }
+    //Test case 3 for arctanMaker()
+    
+    // A test case to check arctan operation with an empty input
+    @Test
+    public void arctanTestWithEmptyInput(){
+        
+        ArrayList<String> testInput = new ArrayList<>();
 
+        // Expected result after arctan operation
+        ArrayList<String> expectedResult = new ArrayList<>();
+
+        // Call the arctanMaker method from here
+        ArrayList<String> result = ScientificCalculaetor.arctanMaker(testInput);
+
+        // Check if the result matches the expected result
+        assertEquals(expectedResult, result);
+
+    }
 }
