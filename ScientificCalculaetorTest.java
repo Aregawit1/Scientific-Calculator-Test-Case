@@ -703,4 +703,20 @@ public class ScientificCalculaetorTest {
         assertEquals(expectedResult, result);
 
     }
+    //Test case 1 for arctanMaker()
+    @Test
+    public void arctanTest(){
+        
+        ArrayList<String> testInput = new ArrayList<>(Arrays.asList("arctan", "1"));
+
+        // Expected result after arctan operation
+        ArrayList<String> expectedResult = new ArrayList<>(Arrays.asList("-4.9E-324"));
+
+        // Call the arctanMaker method from here
+        ArrayList<String> result = ScientificCalculaetor.arctanMaker(testInput);
+
+        // Check if the result matches the expected result
+        assertEquals(expectedResult, result);
+
+    }
 }
