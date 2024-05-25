@@ -686,4 +686,21 @@ public class ScientificCalculaetorTest {
         assertEquals(expectedResult, result);
 
     }
+    //Test case 3 for arccosMaker()
+    // A test case to check arccos operation with an empty input
+    @Test
+    public void arccosTestWithEmptyInput(){
+        
+        ArrayList<String> testInput = new ArrayList<>();
+
+        // Expected result after arccos operation
+        ArrayList<String> expectedResult = new ArrayList<>();
+
+        // Call the arccosMaker method from here
+        ArrayList<String> result = ScientificCalculaetor.arccosMaker(testInput);
+
+        // Check if the result matches the expected result
+        assertEquals(expectedResult, result);
+
+    }
 }
